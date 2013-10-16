@@ -1,0 +1,11 @@
+Stencil
+=======
+
+Stencil is a PHP library allowing you to write easy graphical user interface
+in a text-only environment. It support several backends that implements the
+functionality.
+
+License
+-------
+
+Stencil is under the ISC. See COPYING for a full copy of the license.
