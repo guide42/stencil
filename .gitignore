@@ -1,6 +1,10 @@
 *~
 *.swp
 
+# Composer
+composer.phar
+vendor/
+
 # Eclipse PDT
 .buildpath
 .project

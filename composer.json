@@ -1,0 +1,21 @@
+{
+    "name": "guide42/stencil",
+    "type": "library",
+    "description": "Console GUI library",
+    "keywords": ["console", "gui", "user interface"],
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "Juan M Martínez",
+            "email": "stencil@jm.guide42.com",
+            "homepage": "http://jm.guide42.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "autoload": {
+        "psr-0": { "Stencil\\": "src/" }
+    }
+}
