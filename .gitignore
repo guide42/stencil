@@ -1,0 +1,7 @@
+*~
+*.swp
+
+# Eclipse PDT
+.buildpath
+.project
+.settings/
