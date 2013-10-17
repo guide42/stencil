@@ -1,7 +1,7 @@
 {
     "name": "guide42/stencil",
     "type": "library",
-    "description": "Console GUI library",
+    "description": "Console UI library",
     "keywords": ["console", "gui", "user interface"],
     "license": "ISC",
     "authors": [
