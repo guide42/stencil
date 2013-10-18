@@ -5,6 +5,26 @@ Stencil is a PHP library allowing you to write easy graphical user interface
 in a text-only environment. It support several backends that implements the
 functionality.
 
+Interfaces
+----------
+
+### Ncurses
+
+This is an interface for Ncurses PHP extension.
+
+The ncurses library and the ncurses PHP extension witch is included in the core
+from PHP >= 4.0.7 to PHP < 5.3.0 and from there as a PECL extension, are
+required to use this interface.
+
+You can install it running this (as root)::
+
+    $ pecl install ncurses
+
+And then you need to enable the extension in your *php.ini* by adding::
+
+    extension=ncurses.so  # *nix
+    extension=ncurses.dll # Windows
+
 License
 -------
 
