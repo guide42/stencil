@@ -60,7 +60,14 @@ interface Terminal
      *
      * @param integer $char
      */
-    public function putChar($char);
+    public function writeChar($char);
+
+    /**
+     * Read a char from terminal.
+     *
+     * @return integer
+     */
+    public function readChar();
 
     /**
      * Clear the terminal.

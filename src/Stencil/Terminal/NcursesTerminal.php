@@ -101,9 +101,18 @@ class NcursesTerminal implements Terminal
      * (non-PHPdoc)
      * @see \Stencil\Terminal\Terminal::putChar()
      */
-    public function putChar($char)
+    public function writeChar($char)
     {
         ncurses_waddch(STDSCR, $char);
+    }
+
+    /**
+     * (non-PHPdoc)
+     * @see \Stencil\Terminal\Terminal::readChar()
+     */
+    public function readChar()
+    {
+        return ncurses_wgetch(STDSCR);
     }
 
     /**
