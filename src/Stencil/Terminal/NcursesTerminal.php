@@ -17,7 +17,7 @@ class NcursesTerminal implements Terminal
             trigger_error('Ncurses library not present', E_USER_ERROR);
         }
 
-        $this->addPattern(new Input\CharacterPattern());
+        $this->addProfile(new Input\CommonProfile());
     }
 
     /**

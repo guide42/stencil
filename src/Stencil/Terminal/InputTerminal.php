@@ -25,6 +25,18 @@ trait InputTerminal
     }
 
     /**
+     * Add all patterns from a profile.
+     *
+     * @param \Stencil\Terminal\Input\Profile $profile
+     */
+    public function addProfile(Input\Profile $profile)
+    {
+        foreach ($profile->getPatterns() as $pattern) {
+            $this->addPattern($pattern);
+        }
+    }
+
+    /**
      * Read input from Terminal and process it through the given patterns.
      *
      * @return array
