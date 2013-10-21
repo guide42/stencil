@@ -7,6 +7,8 @@ namespace Stencil\Terminal;
  */
 class NcursesTerminal implements Terminal
 {
+    use InputTerminal;
+
     protected $hasColors = false;
 
     public function __construct()
@@ -14,6 +16,8 @@ class NcursesTerminal implements Terminal
         if (!function_exists('ncurses_init')) {
             trigger_error('Ncurses library not present', E_USER_ERROR);
         }
+
+        $this->addPattern(new Input\CharacterPattern());
     }
 
     /**
@@ -108,10 +112,16 @@ class NcursesTerminal implements Terminal
 
     /**
      * (non-PHPdoc)
-     * @see \Stencil\Terminal\Terminal::readChar()
+     * @see \Stencil\Terminal\InputTerminal::readChar()
      */
-    public function readChar()
+    public function readChar($timeout = null)
     {
+        if ($timeout === null) {
+            ncurses_timeout(-1);
+        } else {
+            ncurses_timeout($timeout);
+        }
+
         return ncurses_wgetch(STDSCR);
     }
 

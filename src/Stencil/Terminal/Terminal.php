@@ -63,13 +63,6 @@ interface Terminal
     public function writeChar($char);
 
     /**
-     * Read a char from terminal.
-     *
-     * @return integer
-     */
-    public function readChar();
-
-    /**
      * Clear the terminal.
      *
      * This normally means that the screen will be repainted in the next
