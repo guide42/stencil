@@ -15,7 +15,7 @@ class CharacterMatcher extends BaseMatcher
     {
         $this->setMatched(false);
 
-        if (count($this->codes) !== 1) {
+        if (count($this->codes) === 0) {
             return;
         }
 
