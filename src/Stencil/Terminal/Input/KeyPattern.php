@@ -23,10 +23,14 @@ class KeyPattern implements Pattern
 
     /**
      * @param \Stencil\Terminal\Input\Key $key
-     * @param array $codes
+     * @param array|string $codes
      */
-    public function __construct(Key $key, array $codes)
+    public function __construct(Key $key, $codes)
     {
+        if (is_string($codes)) {
+            $codes = array_map('ord', str_split($codes));
+        }
+
         $this->key = $key;
         $this->codes = $codes;
     }

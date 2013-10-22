@@ -80,6 +80,16 @@ abstract class BaseMatcher implements Matcher
     }
 
     /**
+     * Retrieve the key codes.
+     *
+     * @return array
+     */
+    public function getCodes()
+    {
+        return $this->codes;
+    }
+
+    /**
      * (non-PHPdoc)
      * @see \Stencil\Terminal\Input\Matcher::getRemainingCodes()
      */

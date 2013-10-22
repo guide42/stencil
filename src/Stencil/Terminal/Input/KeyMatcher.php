@@ -30,21 +30,23 @@ class KeyMatcher extends BaseMatcher
     {
         $this->setMatched(false);
 
+        $codes = $this->getCodes();
+
         $patternCodes = $this->pattern->getCodes();
         $patternCodesCount = count($patternCodes);
 
-        if (count($this->codes) < $patternCodesCount) {
+        if (count($codes) < $patternCodesCount) {
             return;
         }
 
         for ($i = 0; $i < $patternCodesCount; $i++) {
-            if ($patternCodes[$i] !== $this->codes[$i]) {
+            if ($patternCodes[$i] !== $codes[$i]) {
                 return;
             }
         }
 
         $this->setMatched(true);
         $this->addInput($this->pattern->getKey());
-        $this->addRemainingCodes(array_slice($this->codes, $patternCodesCount));
+        $this->addRemainingCodes(array_slice($codes, $patternCodesCount));
     }
 }
