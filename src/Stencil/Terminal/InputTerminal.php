@@ -53,14 +53,20 @@ trait InputTerminal
 
         $keys = array();
 
-        foreach ($this->patterns as $pattern) {
-            $matcher = $pattern->matcher($chars);
+        do {
+            $matches = false;
 
-            if ($matcher->matches()) {
-                $keys += $matcher->getInput();
-                $chars = $matcher->getRemainingCodes();
+            foreach ($this->patterns as $pattern) {
+                $matcher = $pattern->matcher($chars);
+
+                if ($matcher->matches()) {
+                    $keys += $matcher->getInput();
+                    $chars = $matcher->getRemainingCodes();
+
+                    $matches = true;
+                }
             }
-        }
+        } while ($matches);
 
         // XXX If $chars is not empty, that means that there weren't pattern to
         //     convert them into common input.
