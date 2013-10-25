@@ -63,6 +63,12 @@ trait InputTerminal
                     $keys += $matcher->getInput();
                     $chars = $matcher->getRemainingCodes();
 
+                    // Finish checking all chars
+                    // What I'm still doing here?
+                    if (count($chars) === 0) {
+                        break 2;
+                    }
+
                     $matches = true;
                 }
             }
