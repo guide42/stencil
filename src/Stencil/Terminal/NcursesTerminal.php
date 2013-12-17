@@ -88,8 +88,8 @@ class NcursesTerminal implements Terminal
      */
     public function getCursor()
     {
-        ncurses_getyx(STDSCR, $y, $x);
-        return new TerminalPosition($x, $y);
+        ncurses_getyx(STDSCR, $top, $left);
+        return new TerminalPosition($left, $top);
     }
 
     /**
