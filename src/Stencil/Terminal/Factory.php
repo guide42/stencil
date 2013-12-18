@@ -3,10 +3,15 @@
 namespace Stencil\Terminal;
 
 /**
- * Creates a Terminal depending on the system.
+ * Convenience factory. It tries to pick the best available implementation.
  */
-class TerminalFacade
+class Factory
 {
+    /**
+     * Creates a Terminal depending on the system.
+     *
+     * @return \Stencil\Terminal\Terminal
+     */
     public static function create()
     {
         if (function_exists('ncurses_init')) {
