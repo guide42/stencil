@@ -7,7 +7,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$terminal = \Stencil\Terminal\TerminalFacade::create();
+$terminal = \Stencil\Terminal\Factory::create();
 $terminal->init();
 
 sleep(1);
