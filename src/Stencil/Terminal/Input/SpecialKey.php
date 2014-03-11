@@ -43,6 +43,10 @@ class SpecialKey extends Key
      */
     public function __construct($kind)
     {
+        if (array_key_exists($kind, self::$kinds) === false) {
+            throw new \InvalidArgumentException('Invalid kind.');
+        }
+
         $this->kind = $kind;
 
         parent::__construct(
