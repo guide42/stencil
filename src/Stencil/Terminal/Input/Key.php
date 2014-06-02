@@ -16,14 +16,14 @@ class Key
      *
      * @var string
      */
-    protected $repr;
+    public $repr;
 
     /**
      * Modifiers bitmask for the Key.
      *
      * @var integer
      */
-    protected $modifiers;
+    public $modifiers;
 
     /**
      * @param string $repr

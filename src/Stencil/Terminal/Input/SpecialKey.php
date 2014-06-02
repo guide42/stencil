@@ -36,7 +36,7 @@ class SpecialKey extends Key
      *
      * @var integer
      */
-    protected $kind;
+    public $kind;
 
     /**
      * @param integer $kind
@@ -52,16 +52,6 @@ class SpecialKey extends Key
         parent::__construct(
             $this->getKindName()
         );
-    }
-
-    /**
-     * Retrieve the kind code.
-     *
-     * @return integer
-     */
-    public function getKind()
-    {
-        return $this->kind;
     }
 
     /**
