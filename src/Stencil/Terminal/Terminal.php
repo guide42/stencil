@@ -56,13 +56,6 @@ interface Terminal
     public function setCursor(TerminalPosition $position);
 
     /**
-     * Insert a char in the cursor position.
-     *
-     * @param integer $char
-     */
-    public function writeChar($char);
-
-    /**
      * Clear the terminal.
      *
      * This normally means that the screen will be repainted in the next

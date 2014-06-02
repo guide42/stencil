@@ -8,6 +8,7 @@ namespace Stencil\Terminal;
 class NcursesTerminal implements Terminal
 {
     use InputTerminal;
+    use OutputTerminal;
 
     protected $hasColors = false;
 
@@ -103,7 +104,7 @@ class NcursesTerminal implements Terminal
 
     /**
      * (non-PHPdoc)
-     * @see \Stencil\Terminal\Terminal::putChar()
+     * @see \Stencil\Terminal\OutputTerminal::writeChar()
      */
     public function writeChar($char)
     {
