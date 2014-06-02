@@ -51,6 +51,11 @@ trait InputTerminal
             $char = $this->readChar(1);
         }
 
+        // There is no input.
+        if (count($chars) === 0) {
+            return array();
+        }
+
         $keys = array();
 
         do {
@@ -63,7 +68,7 @@ trait InputTerminal
                     $keys += $matcher->getInput();
                     $chars = $matcher->getRemainingCodes();
 
-                    // Finish checking all chars
+                    // Finish checking all chars.
                     // What I'm still doing here?
                     if (count($chars) === 0) {
                         break 2;
@@ -76,6 +81,7 @@ trait InputTerminal
 
         // XXX If $chars is not empty, that means that there weren't pattern to
         //     convert them into common input.
+        //var_dump($chars, $keys);
 
         return $keys;
     }
