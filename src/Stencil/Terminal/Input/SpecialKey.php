@@ -50,7 +50,7 @@ class SpecialKey extends Key
         $this->kind = $kind;
 
         parent::__construct(
-            $this->getKindName()
+            $this->getName()
         );
     }
 
@@ -59,7 +59,7 @@ class SpecialKey extends Key
      *
      * @return string
      */
-    public function getKindName()
+    public function getName()
     {
         return self::$kinds[$this->kind];
     }

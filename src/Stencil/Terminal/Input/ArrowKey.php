@@ -24,7 +24,7 @@ class ArrowKey extends Key
      *
      * @var integer
      */
-    protected $direction;
+    public $direction;
 
     /**
      * @param integer $direction
@@ -34,18 +34,8 @@ class ArrowKey extends Key
         $this->direction = $direction;
 
         parent::__construct(
-            $this->getDirectionName()
+            $this->getName()
         );
-    }
-
-    /**
-     * Retrieve the direction code.
-     *
-     * @return integer
-     */
-    public function getDirection()
-    {
-        return $this->direction;
     }
 
     /**
@@ -53,7 +43,7 @@ class ArrowKey extends Key
      *
      * @return string
      */
-    public function getDirectionName()
+    public function getName()
     {
         return self::$directions[$this->direction];
     }
