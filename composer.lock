@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/event-loop.git",
-                "reference": "2ee212de569fbe8476308bafb7bcaf477a9a6fd9"
+                "reference": "27c34c491c8588b1521cd42de4c3c5e21137456a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/2ee212de569fbe8476308bafb7bcaf477a9a6fd9",
-                "reference": "2ee212de569fbe8476308bafb7bcaf477a9a6fd9",
+                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/27c34c491c8588b1521cd42de4c3c5e21137456a",
+                "reference": "27c34c491c8588b1521cd42de4c3c5e21137456a",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
                 "asynchronous",
                 "event-loop"
             ],
-            "time": "2014-06-01 12:58:29"
+            "time": "2014-06-18 21:49:21"
         }
     ],
     "packages-dev": [],
@@ -57,6 +57,7 @@
     "stability-flags": {
         "react/event-loop": 20
     },
+    "prefer-stable": false,
     "platform": {
         "php": ">=5.3"
     },
