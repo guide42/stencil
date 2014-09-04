@@ -7,30 +7,31 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$terminal = \Stencil\Terminal\Factory::create();
-$terminal->init();
+use Stencil\Terminal\Factory;
+use Stencil\Terminal\Terminal;
+use Stencil\Terminal\Input\SpecialKey;
 
-$write = false;
+$terminal = Factory::create();
+$terminal->init();
 
 while (true) {
     $keys = $terminal->readInput();
 
     foreach ($keys as $key) {
-        if ($key instanceof \Stencil\Terminal\Input\SpecialKey &&
-            $key->kind === \Stencil\Terminal\Input\SpecialKey::KIND_INSERT) {
-            $write = !$write;
-        }
-
-        if (!$write && $key->repr === 'q') {
+        if ($key->repr === 'q') {
             break 2;
         }
 
-        if ($write) {
-            for ($i = 0, $l = strlen($key->repr); $i < $l; $i++) {
-                $terminal->writeChar(ord($key->repr[$i]));
-            }
-        }
+        write($terminal, $key->repr);
     }
 }
 
 $terminal->end();
+
+function write(Terminal $terminal, $input)
+{
+    $length = is_array($input) ? count($input) : strlen($input);
+    for ($i = 0; $i < $length; $i++) {
+        $terminal->writeChar(ord($input[$i]));
+    }
+}
